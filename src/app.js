@@ -1,18 +1,14 @@
 require("dotenv").config();
 const fs = require("fs");
 const express = require("express");
+const cors = require("cors");
 
 const routers = fs.readdirSync(`${process.cwd()}/src/routers/`);
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Tüm kaynaklara izin ver (Dikkatli kullanın)
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(cors());
 
 app.use((req, res, next) => {
   const token = req.headers["authorization"];
