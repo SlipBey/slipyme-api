@@ -1,2 +1,58 @@
-node_modules
+# ---- Node / TypeScript ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# Build outputs
+dist/
+build/
+lib/
+
+# Caches / coverage
+.cache/
+.eslintcache
+.turbo/
+.nyc_output/
+coverage/
+.tmp/
+temp/
+
+# ---- Environment files ----
 .env
+.env.*.local
+*.env.local
+
+# ---- Logs ----
+logs/
+*.log
+*.log.*
+
+# ---- Runtime JSON storage (keep folder, ignore contents) ----
+/jsons/**
+!/jsons/.gitkeep
+
+# ---- TLS / Certificates (keep folder, ignore contents) ----
+/src/cr/**
+!/src/cr/.gitkeep
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
+# ---- Editors / IDEs ----
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ---- Docker (local overrides) ----
+docker-compose.override.yml
+
+# ---- Hosting / Misc ----
+.vercel/
+.next/
